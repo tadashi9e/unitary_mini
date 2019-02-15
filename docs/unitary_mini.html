@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>UNITARY MINI</title>
+    <script src="unitary_mini.js"></script>
+    <script>
+      window.onload=function() { reset_cmd(); };
+    </script>
+    <link rel="stylesheet" type="text/css" href="unitary_mini.css">
+  </head>
+  <body>
+    <div class="form">
+      <form>
+        <div class="display">
+          <textarea class="disp_message" id="message" readonly></textarea>
+          <table>
+            <tbody  id="display">
+              <tr><td>1.0</td><td></td><td>0.0</td><td></td></tr>
+              <tr><td>0.0</td><td></td><td>1.0</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="command">
+          <input class="button_rst" type="button" value="RESET" onclick="reset_cmd();">
+          <input class="button_clr" type="button" value="CLEAR" onclick="clear_cmd();">
+          <table>
+            <tr>
+              <td><input class="cmd" type="text" id="cmd0" size="2" readonly="1"></td>
+              <td><input class="arg" type="text" id="arg0" size="8" readonly="1"></td>
+            </tr>
+            <tr>
+              <td><input class="cmd" type="text" id="cmd1" size="2" readonly="1"></td>
+              <td><input class="arg" type="text" id="arg1" size="8" readonly="1"></td>
+            </tr>
+            <tr>
+              <td><input class="cmd" type="text" id="cmd2" size="2" readonly="1"></td>
+              <td><input class="arg" type="text" id="arg2" size="8" readonly="1"></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td><input class="button" type="button" value="7" onclick="key_in('7');"></td>
+              <td><input class="button" type="button" value="8" onclick="key_in('8');"></td>
+              <td><input class="button" type="button" value="9" onclick="key_in('9');"></td>
+              <td><input class="button" type="button" value="H" onclick="key_in('H');"></td>
+              <td><input class="button" type="button" value="C" onclick="key_in('C');"></td>
+            </tr>
+            <tr>
+              <td><input class="button" type="button" value="4" onclick="key_in('4');"></td>
+              <td><input class="button" type="button" value="5" onclick="key_in('5');"></td>
+              <td><input class="button" type="button" value="6" onclick="key_in('6');"></td>
+              <td><input class="button" type="button" value="X" onclick="key_in('X');"></td>
+              <td><input class="button" type="button" value="R" onclick="key_in('R');"></td>
+            </tr>
+            <tr>
+              <td><input class="button" type="button" value="1" onclick="key_in('1');"></td>
+              <td><input class="button" type="button" value="2" onclick="key_in('2');"></td>
+              <td><input class="button" type="button" value="3" onclick="key_in('3');"></td>
+              <td><input class="button" type="button" value="Y" onclick="key_in('Y');"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input class="button" type="button" value="0" onclick="key_in('0');"></td>
+              <td><input class="button" type="button" value="." onclick="key_in('.');"></td>
+              <td><input class="button" type="button" value="-" onclick="key_in('-');"></td>
+              <td><input class="button" type="button" value="Z" onclick="key_in('Z');"></td>
+              <td><input class="button" type="button" value="=" onclick="key_in('=');"></td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
