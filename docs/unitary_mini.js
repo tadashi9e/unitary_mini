@@ -71,12 +71,12 @@ function clear_display() {
     }
 }
 function normalize_vector(avs) {
-    var sum = [0.0, 0.0];
+    var sum = 0.0;
     for (sv in avs) {
         var a = avs[sv];
-        sum = add(sum, mult(a, a));
+        sum = sum + a[0]*a[0] + a[1]*a[1];
     }
-    var u = Math.sqrt(sum[0]*sum[0] + sum[1]*sum[1]);
+    var u = Math.sqrt(sum);
     for (sv in avs) {
         var a = avs[sv];
         if (a[0] == 0.0 && a[1] == 0.0) {
@@ -90,6 +90,13 @@ function normalize() {
         var avs = amps[i];
         normalize_vector(avs);
     }
+}
+function strOfFloat(f) {
+    var r = f.toFixed(8);
+    if (r.match(/\./)) {
+        return r.replace(/\.?0+$/, "");
+    }
+    return r;
 }
 function disp() {
     if (error_msg) {
@@ -108,7 +115,7 @@ function disp() {
             var imag = amp ? amp[1] : 0.0;
             var td_real = tr.insertCell(i * 2);
             td_real.appendChild(
-                document.createTextNode(String(real).substring(0, 8)));
+                document.createTextNode(strOfFloat(real)));
             var td_imag = tr.insertCell(i * 2 + 1);
             if (imag == 0.0) {
                 continue;
@@ -119,11 +126,12 @@ function disp() {
                 td_imag.appendChild(document.createTextNode("-i"));
             } else {
                 if (imag >= 0.0) {
-                    imag = "+" + imag;
+                    td_imag.appendChild(
+                        document.createTextNode("+" + strOfFloat(imag) + "i"));
+                } else {
+                    td_imag.appendChild(
+                        document.createTextNode(strOfFloat(imag) + "i"));
                 }
-                td_imag.appendChild(
-                    document.createTextNode(String(imag).substring(0, 8)
-                                            + "i"));
             }
         }
     }
