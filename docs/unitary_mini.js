@@ -8,7 +8,7 @@ var commands = "";
 function update_max_bit(n) {
     if (max_bit < n) {
         var max_states2 = (1 << (n + 1));
-        for (var m = max_states; m <= max_states2; m = m * 2) {
+        for (var m = max_states; m < max_states2; m = m + max_states) {
             for (var i = 0; i < max_states; i++) {
                 var av = {};
                 for (var j = 0; j < max_states; j++) {
