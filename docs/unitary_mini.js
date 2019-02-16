@@ -278,10 +278,15 @@ function mult(a, b) {
     return [a[0]*b[0] -  a[1]*b[1], a[0]*b[1] +  a[1]*b[0]];
 }
 function m_add(m, state, a) {
-    if (!a) {
+    if (!a || (a[0] == 0.0 && a[1] == 0.0)) {
         return;
     }
     if (m[state]) {
+        var a2 = add(m[state], a);
+        if (a2[0] == 0.0 && a2[1] == 0.0) {
+            delete m[state];
+            return;
+        }
         m[state] = add(m[state], a);
     } else {
         m[state] = a;
