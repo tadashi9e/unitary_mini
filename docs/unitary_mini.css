@@ -6,15 +6,15 @@ body {
     height: 100%;
 }
 .form {
-    background: #ffaaaa;
-    box-sizing:border-box;
     width: 100%;
     height: 100%;
 }
 form {
+    display: flex;
     height: 100%;
 }
 .display {
+    flex-grow:  5;
     font-size: 20px;
     overflow: scroll;
 }
@@ -37,6 +37,10 @@ form {
     background: #eeeeee;
     font-size: 24px;
 }
+.command {
+    flex-grow:  1;
+    background: #ffaaaa;
+}
 .button {
     background: #ffcccc;
     font-size: 30px;
@@ -50,42 +54,30 @@ form {
 @media (orientation: landscape) {
     .display {
         background: #eeeeee;
-        float: left;
-        box-sizing:border-box;
-        width: 200px;
-        width: -moz-calc(100% - 320px);
-        width: -webkit-calc(100% - 320px);
-        width : calc(100% - 320px);
+        justify-content: flex-between;
         height: 100%;
         padding: 0px;
         margin: 0px
         resize: both;
     }
     .command {
-        float: right;
-        box-sizing:border-box;
-        width: 300px;
+        justify-content: flex-end;
         height: 100%;
         padding: 0px;
         margin: 0px
     }
 }
 @media (orientation: portrait) {
+    form {
+        flex-wrap: wrap;
+    }
     .display {
         background: #eeeeee;
-        float: center;
-        box-sizing:border-box;
         width: 100%;
-        height: 30%;
-        height: -moz-calc(100%-420px);
-        height: -webkit-calc(100%-420px);
-        height: calc(100%-420px);
         resize: both;
     }
     .command {
-        float: bottom;
-        box-sizing:border-box;
-        height: 400px;
+        width: 100%;
         padding: 10px;
     }
 }
