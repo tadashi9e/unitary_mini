@@ -60,21 +60,34 @@ Controlled Pauli-Z gate
 -------------------------------------------------
 Double controlled Pauli-Z gate
 
+[R] [number] [X] [number]
+--------------------------------
+[R] [number] [Y] [number]
+--------------------------------
 [R] [number] [Z] [number]
 --------------------------------
-Phase shift gate. The number following [Z] is phase (radian par pi).
+Rotate the qubit around the x-axis, y-axis or z-axis (Rx/Ry/Rz gate).
+The number following [X]/[Y]/[Z] is rotation radian par pi.
 
+[C] number [R] [number] [X] [number]
+-----------------------------------------------
+[C] number [R] [number] [Y] [number]
+-----------------------------------------------
 [C] number [R] [number] [Z] [number]
 -----------------------------------------------
-Controlled phase shift gate.
+Controlled rotation gate ( Controlled-Rx, Controlled-Ry, Controlled-Rz gate).
 
+[C] number [C] number [R] [number] [X] [number]
+--------------------------------------------------------------
+[C] number [C] number [R] [number] [Y] [number]
+--------------------------------------------------------------
 [C] number [C] number [R] [number] [Z] [number]
 --------------------------------------------------------------
-Double controlled phase shift gate.
+Double controlled rotation gate ( Double controlled-Rx, Double controlled-Ry, Double controlled-Rz gate).
 
 [RESET]
 -----------
-Reset quantum status as |0>.
+Reset quantum status as unit.
 
 [CLEAR]
 ----------
